@@ -1,0 +1,62 @@
+delimiter $$
+
+CREATE TABLE `complain` (
+  `meter_id` int(11) NOT NULL,
+  `problem` varchar(445) NOT NULL,
+  `contact` varchar(12) NOT NULL,
+  `address` varchar(105) NOT NULL,
+  `status` varchar(25) NOT NULL DEFAULT 'In Flow'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1$$
+
+
+
+delimiter $$
+
+CREATE TABLE `contact` (
+  `name` varchar(50) NOT NULL,
+  `email` varchar(55) NOT NULL,
+  `message` varchar(445) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1$$
+
+
+
+delimiter $$
+
+CREATE TABLE `user` (
+  `user_id` varchar(60) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  `meter_id` int(11) NOT NULL,
+  `last_month_paid` varchar(15) DEFAULT 'NA',
+  `bill_till` varchar(11) DEFAULT '0',
+  `last_paid_amount` varchar(11) DEFAULT '0',
+  `total_paid` varchar(15) DEFAULT '0',
+  `curr_meter_reading` float DEFAULT '0',
+  PRIMARY KEY (`user_id`,`meter_id`),
+  UNIQUE KEY `user_id_UNIQUE` (`user_id`),
+  UNIQUE KEY `meter_id_UNIQUE` (`meter_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1$$
+
+
+
+INSERT INTO `makemybill`.`user`
+(`user_id`,
+`password`,
+`meter_id`,
+`last_month_paid`,
+`bil_till`,
+`last_paid_amount`,
+`total_paid`,
+`curr_meter_reading`)
+VALUES
+(
+<{user_id: }>,
+<{password: }>,
+<{meter_id: }>,
+<{last_month_paid: NA}>,
+<{bil_till: 0}>,
+<{last_paid_amount: 0}>,
+<{total_paid: 0}>,
+<{curr_meter_reading: 0}>
+);
+
+
