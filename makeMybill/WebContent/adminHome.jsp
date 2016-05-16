@@ -8,7 +8,7 @@
 			<meta name="author" content="">
 			<link rel="shortcut icon" href="assets/ico/favicon.png">
 
-			<title>makeMybill || Admin Portal</title>
+			<title>makeMybill || Home</title>
 
 			<!-- Bootstrap core CSS -->
 			<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -51,7 +51,13 @@
 					</div>
 					<div class="collapse navbar-collapse appiNav">
 						<ul class="nav navbar-nav">
-						
+							
+							 <li><a href="adminHome.jsp">Home</a></li>
+							<li><a href="addUser.jsp">Add User</a></li>
+							<li><a href="updateBill.jsp">Update Bill </a></li>
+							<li><a href="complainList.jsp">Complains </a></li>
+							<li><a href="contactList.jsp">Contacts </a></li>
+								<li><a href="signOut">Log Out </a></li>
 							
 						    
 						</ul>
@@ -63,19 +69,60 @@
 	
 			
 <br><br><br><br>
+	<div id="topWrap" class="jumbotron">
+			<div class="container">
+				<div class="col-md-6 col-md-push-6 jumboText">
+					<h1>e Electric Bill Admin Portal </h1>
+					<h2>Get instant access to generate user electricity bill and more.</h2>
+					
+				</div>
+				<div class="col-md-6 col-md-pull-6 hidden-xs">
+					<div class="mobile">
+						<div class="mobileSlider">
+							<ul class="slides">
+								<li>
+									<img src="assets/img/screen1.jpg" height="320" />
+								</li>
+								<li>
+									<img src="assets/img/screen2.jpeg" height="320"/>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			</div>
 
-<h2 style="margin-left: 43%">Admin Portal:</h2></span>
-         <div class="wrapper" ng-controller="adminLogin">
-    <form class="form-signin">       
-      <h2 class="form-signin-heading">Please login</h2>
-      <input type="text" class="form-control" id="username" ng-model="user.username" placeholder="Admin ID" required="" autofocus="" />
-      <input type="password" class="form-control" id="password" ng-model="user.password"placeholder="Password" required=""/>      
-     
-      <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="login()">Login</button>   
-      <span style="color: red" id="logInError">{{logInError}}</span>
-    </form>
-  </div>
-    
+
+<div id="featureWrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-4 text-center feature">
+					<i class="fa fa-tablet icon"></i>
+					<h3>Update Bill</h3>
+					<p>
+					   Now you can update electricity bill information of user at any time and any place.
+					</p>
+				</div>
+				<div class="col-sm-4 text-center feature">
+					<i class="fa fa-pencil icon"></i>
+					<h3>Add User</h3>
+					<p>
+					  Ease with operating application and you can add new user easily.
+					</p>
+				</div>
+				<div class="col-sm-4 text-center feature">
+					<i class="fa fa-star icon"></i>
+					<h3>Process Complains and Contact. </h3>
+					<p>
+					   Complain from user can be seen at any time and check status.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div> <!-- /featureWrap -->
+	
 	
 	<footer>
 		<div class="container">

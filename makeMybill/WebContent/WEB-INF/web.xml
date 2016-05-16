@@ -12,4 +12,16 @@
   <session-config>
     <session-timeout>-1</session-timeout>
   </session-config>
+  <filter>
+    <filter-name>SessionCheckFilter</filter-name>
+    <filter-class>com.makeMybill.filter.SessionCheckFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>SessionCheckFilter</filter-name>
+    <url-pattern>/adminHome.jsp</url-pattern>
+    <url-pattern>/complainList.jsp</url-pattern>
+    <url-pattern>/contactList.jsp</url-pattern>
+    <url-pattern>/addUser.jsp</url-pattern>
+    <url-pattern>/updateBill.jsp</url-pattern>
+  </filter-mapping>
 </web-app>

@@ -7,7 +7,7 @@ app.controller('login',function($scope,$http,$window)
 	var userId = document.getElementById("userId").value;
 	
 	if(userId=="" || userId==undefined){
-		$scope.logInError = "* Enter Password";
+		$scope.logInError = "* Enter Username";
 	    return;
 	}
 	if(pass==""||pass==undefined){

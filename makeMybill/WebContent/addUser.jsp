@@ -8,7 +8,7 @@
 			<meta name="author" content="">
 			<link rel="shortcut icon" href="assets/ico/favicon.png">
 
-			<title>makeMybill || Admin Portal</title>
+			<title>makeMybill || Home</title>
 
 			<!-- Bootstrap core CSS -->
 			<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -51,7 +51,13 @@
 					</div>
 					<div class="collapse navbar-collapse appiNav">
 						<ul class="nav navbar-nav">
-						
+							
+							 <li><a href="adminHome.jsp">Home</a></li>
+							<li><a href="addUser.jsp">Add User</a></li>
+							<li><a href="updateBill.jsp">Update Bill </a></li>
+							<li><a href="complainList.jsp">Complains </a></li>
+							<li><a href="contactList.jsp">Contacts </a></li>
+								<li><a href="signOut">Log Out </a></li>
 							
 						    
 						</ul>
@@ -62,21 +68,32 @@
 
 	
 			
-<br><br><br><br>
-
-<h2 style="margin-left: 43%">Admin Portal:</h2></span>
-         <div class="wrapper" ng-controller="adminLogin">
-    <form class="form-signin">       
-      <h2 class="form-signin-heading">Please login</h2>
-      <input type="text" class="form-control" id="username" ng-model="user.username" placeholder="Admin ID" required="" autofocus="" />
-      <input type="password" class="form-control" id="password" ng-model="user.password"placeholder="Password" required=""/>      
-     
-      <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="login()">Login</button>   
-      <span style="color: red" id="logInError">{{logInError}}</span>
-    </form>
-  </div>
-    
-	
+<br><br><br><br><br><br>
+	<div ng-controller="addUser">
+<div id="addUserForm" style="margin-left: 35%;">
+ <form class="form-group">
+ <label for="usr" style="font-size: 20px">User ID:</label>
+ <input class="form-control" ng-model="user.username" id="username" style="max-width:400px;" required="required">
+ <label for="usr" style="font-size: 20px">Password:</label>
+ <input class="form-control" ng-model="user.password" id="password" style="max-width:400px;"  required="required">
+  <label for="usr" style="font-size: 20px">Meter ID:</label>
+ <input class="form-control" ng-model="user.meterId" id="meterId" style="max-width:400px;"  required="required">
+  <label for="usr" style="font-size: 20px">Last Paid Month:</label>
+ <input class="form-control" ng-model="user.lastMonthPaid" id="lastMonthPaid" style="max-width:400px;"  required="required">
+  <label for="usr" style="font-size: 20px">Bill Till:</label>
+ <input class="form-control" ng-model="user.billTill" id="billTill" style="max-width:400px;"  required="required">
+  <label for="usr" style="font-size: 20px">Last Paid Amount:</label>
+ <input class="form-control" ng-model="user.lastPaidAmount" id="lastPaidAmount" style="max-width:400px;"  required="required">
+ <label for="usr" style="font-size: 20px">Total Paid:</label>
+ <input class="form-control" ng-model="user.totalPaid" id="totalPaid" style="max-width:400px;"  required="required">
+ <label for="usr" style="font-size: 20px">Current Reading:</label>
+ <input class="form-control" ng-model="user.currReading" id="currReading" style="max-width:400px;"  required="required">
+ <input type="button" ng-click="addUser()" class="btn btn-default navbar-btn" style="width:100px;font-size: 15px" value="Add"/><br>
+ <span id=addError">{{addError}}</span>
+<span id="addStatus">{{addStatus}}</span>
+ </form>
+</div>
+	</div>
 	<footer>
 		<div class="container">
 			<div class="row">

@@ -29,7 +29,13 @@ public class signOut extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+	
 		HttpSession session = request.getSession(false);
+		if(session.getAttribute("username")!=null){
+			session.invalidate();
+			response.sendRedirect("admin.jsp");
+			return;
+		}
 		session.invalidate();
 		response.sendRedirect("home.jsp");
 		return;

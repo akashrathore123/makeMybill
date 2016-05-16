@@ -10,4 +10,6 @@ public interface DAO {
 
 	public BillDTO checkLogin(String checkLogin, List<PreparedStatementDTO> pslist) throws ClassNotFoundException,SQLException;
 	public int checkUser(String sql,List<PreparedStatementDTO> psList) throws ClassNotFoundException,SQLException;
+
+	public void insertUser(String addUser, List<PreparedStatementDTO> psList) throws ClassNotFoundException,SQLException;
 }

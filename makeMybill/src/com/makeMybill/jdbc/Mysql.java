@@ -185,5 +185,58 @@ public class Mysql implements DBConstants,DAO{
 		}
 		return rowCount;
 	}
+
+	@Override
+	public void insertUser(String addUser, List<PreparedStatementDTO> psList)
+			throws ClassNotFoundException, SQLException {
+		// TODO Auto-generated method stub
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try
+		{
+			con = getConnection();
+			pstmt = con.prepareStatement(addUser);
+			if(psList!=null && psList.size()>0){
+				for(PreparedStatementDTO psDTO : psList){
+					if(psDTO.getDatatype()==STRING){
+				
+						pstmt.setString(psDTO.getPosition(), psDTO.getValue().toString());
+					}
+					else
+					if(psDTO.getDatatype()==INTEGER){
+						pstmt.setInt(psDTO.getPosition(), (Integer)psDTO.getValue());
+						
+					}
+					else
+						if(psDTO.getDatatype()==DOUBLE){
+							
+							pstmt.setDouble(psDTO.getPosition(), (Double)psDTO.getValue());
+							
+						}
+						else
+							if(psDTO.getDatatype()==FLOAT){
+								
+								pstmt.setFloat(psDTO.getPosition(),(float) psDTO.getValue());
+								
+							}
+				}
+			}
+			 pstmt.execute();
+			
+		}
+		finally
+		{
+			if(pstmt!=null){
+				pstmt.close();
+			}
+			if(con!=null){
+				con.close();
+			}
+		}
+		
+		
+		
+	}
 	}
 

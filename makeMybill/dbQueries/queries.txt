@@ -59,28 +59,4 @@ VALUES
 <{curr_meter_reading: 0}>
 );
 
-delimiter $$
-
-CREATE TABLE `admin` (
-  `username` varchar(55) NOT NULL,
-  `password` varchar(45) NOT NULL,
-  `name` varchar(65) NOT NULL,
-  `phone` varchar(10) NOT NULL,
-  PRIMARY KEY (`username`),
-  UNIQUE KEY `username_UNIQUE` (`username`),
-  UNIQUE KEY `phone_UNIQUE` (`phone`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1$$
-
-INSERT INTO `makemybill`.`admin`
-(`username`,
-`password`,
-`name`,
-`phone`)
-VALUES
-(
-<{username: }>,
-<{password: }>,
-<{name: }>,
-<{phone: }>
-);
 

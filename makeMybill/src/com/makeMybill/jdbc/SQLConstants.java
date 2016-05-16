@@ -6,4 +6,6 @@ public interface SQLConstants {
   String CHECK_USER = "Select * from user where meter_id=?;";
   String ADD_COMPLAIN = "Insert into complain values(?,?,?,?,'In Flow');";
   String ADD_CONTACT = "Insert into contact values(?,?,?);";
+  String ADMIN_LOGIN = "Select * from admin where username=? and password=?;";
+  String ADD_USER = "Insert into user values(?,?,?,?,?,?,?,?);";
 }
